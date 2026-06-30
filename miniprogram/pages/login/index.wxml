@@ -1,0 +1,51 @@
+<!-- 登录授权页 - 微信原生授权 -->
+<view class="login-page">
+  <view class="gradient-top"></view>
+
+  <view class="content">
+    <text class="brand-logo">BURNBOOK</text>
+    <text class="brand-sub">燃本 · 记录每一滴汗水</text>
+
+    <view class="auth-section" wx:if="{{!isAuthorized}}">
+      <text class="auth-title">欢迎使用燃本</text>
+      <text class="auth-desc">点击下方按钮授权登录</text>
+
+      <!-- 方案1: getUserProfile (旧版兼容) -->
+      <button
+        class="auth-btn"
+        wx:if="{{canUseGetUserProfile}}"
+        open-type="getUserProfile"
+        bindgetuserprofile="onGetUserProfile"
+      >
+        <text class="auth-btn-text">微信一键授权登录</text>
+      </button>
+
+      <!-- 方案2: 新版头像昵称授权 -->
+      <view class="new-auth" wx:if="{{!canUseGetUserProfile}}">
+        <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+          <image class="avatar-preview" src="{{tempAvatarUrl}}" mode="aspectFill" wx:if="{{tempAvatarUrl}}" />
+          <text class="avatar-placeholder" wx:else>👤</text>
+          <text class="avatar-tip">点击设置头像</text>
+        </button>
+
+        <view class="nickname-wrap">
+          <text class="nickname-label">昵称</text>
+          <input
+            class="nickname-input"
+            type="nickname"
+            placeholder="请输入或点击自动填充"
+            value="{{nickNameInput}}"
+            bindinput="onNickInput"
+            bindblur="onNickBlur"
+          />
+        </view>
+
+        <view class="enter-btn" bindtap="onEnterApp">
+          <text class="enter-btn-text">进入燃本</text>
+        </view>
+      </view>
+
+      <text class="auth-notice">授权即表示同意《用户协议》和《隐私政策》</text>
+    </view>
+  </view>
+</view>

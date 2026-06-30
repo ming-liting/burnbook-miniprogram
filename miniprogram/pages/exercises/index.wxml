@@ -1,0 +1,24 @@
+<!-- 动作库 -->
+<view class="pg">
+  <text class="tl">动作库</text>
+  <view class="srch"><text class="si">🔍</text><input class="sin" placeholder="输入动作查询名称"/></view>
+
+  <view class="body">
+    <!-- 左侧分类栏 -->
+    <scroll-view class="left" scroll-y>
+      <view class="cat {{cur==='all'?'on':''}}" bindtap="onCat" data-c="all">全部</view>
+      <view class="cat {{cur===item.key?'on':''}}" wx:for="{{cats}}" wx:key="key" bindtap="onCat" data-c="{{item.key}}">{{item.name}}</view>
+    </scroll-view>
+
+    <!-- 右侧动作列表 -->
+    <scroll-view class="right" scroll-y>
+      <view class="ex {{item.sel?'on':''}}" wx:for="{{list}}" wx:key="id" bindtap="onSel" data-id="{{item.id}}">
+        <view class="exh"><text class="exn">{{item.name}}</text><text class="exf" catchtap="onFav" data-id="{{item.id}}">{{item.fav?'❤️':'🤍'}}</text></view>
+        <view class="ext"><text class="et">{{item.muscle}}</text><text class="et lv">{{item.level}}</text></view>
+        <view class="ck" wx:if="{{item.sel}}">✓</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="bar"><text>已选 {{n}} 个</text><view class="btn {{n>0?'on':''}}" bindtap="onAdd">添加至训练</view></view>
+</view>

@@ -1,0 +1,18 @@
+.pg{width:100vw;min-height:100vh;background:#1E1E1E;padding:160rpx 40rpx 200rpx}
+.card{background:rgba(255,255,255,.04);border-radius:24rpx;padding:40rpx;margin-bottom:32rpx}
+.ct{display:block;font-weight:600;font-size:30rpx;color:#FFF;margin-bottom:32rpx}
+.row{display:flex;justify-content:space-around}
+.st{display:flex;flex-direction:column;align-items:center}
+.sv{font-weight:700;font-size:36rpx;color:#E2F163;margin-bottom:8rpx}
+.sl{font-weight:700;font-size:24rpx;color:#999}
+/* 简约周日历 */
+.cal{display:flex;justify-content:space-around;margin-bottom:40rpx;padding:28rpx 16rpx;background:rgba(255,255,255,.04);border-radius:24rpx}
+.day{display:flex;flex-direction:column;align-items:center;gap:6rpx}
+.dn{font-size:22rpx;color:#999}
+.dd{font-weight:700;font-size:28rpx;color:#FFF;width:52rpx;height:52rpx;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.dot{width:8rpx;height:8rpx;border-radius:50%;background:#E2F163}
+/* 按钮 */
+.btn{height:88rpx;background:linear-gradient(135deg,#896CFE,#B3A0FF);border-radius:200rpx;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:32rpx;color:#FFF}
+.nav{position:fixed;bottom:0;left:0;width:100%;background:#1A1A1A;display:flex;justify-content:space-around;padding:16rpx 0 48rpx;z-index:999}
+.n{display:flex;flex-direction:column;align-items:center;gap:6rpx;font-size:40rpx;opacity:.4;padding:12rpx 32rpx}
+.n text{font-size:22rpx}.n.on{opacity:1;color:#E2F163}

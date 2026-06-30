@@ -1,0 +1,41 @@
+<!-- 计时训练 -->
+<view class="pg">
+  <view class="top">
+    <text class="time">▸ {{timeDisplay}}</text>
+    <view class="end" bindtap="onEndTrain">结束训练</view>
+  </view>
+  <view class="list">
+    <block wx:for="{{exercises}}" wx:for-index="i" wx:key="_id">
+      <view class="ex {{item.status==='done'?'ok':''}} {{item.status==='doing'?'on':''}}">
+        <view class="exh">
+          <text class="exi">{{i+1}}</text><text class="exn">{{item.name}}</text>
+          <view class="exb {{item.status}}" bindtap="onStartExercise" data-exidx="{{i}}">
+            <text wx:if="{{item.status==='pending'}}">开始</text>
+            <text wx:elif="{{item.status==='doing'}}">继续</text>
+            <text wx:else>✓</text>
+          </view>
+        </view>
+        <view class="sets" wx:if="{{item.status==='doing'}}">
+          <view class="sr" wx:for="{{item.sets}}" wx:for-index="si" wx:key="si">
+            <view class="si {{si<item.currentSet?'ck':''}} {{si===item.currentSet?'cu':''}}"><text>{{si<item.currentSet?'✓':si+1}}</text></view>
+            <input class="sio" type="digit" placeholder="kg" bindinput="onSetInput" data-exidx="{{i}}" data-si="{{si}}" data-field="weight"/>
+            <input class="sio" type="number" placeholder="次" bindinput="onSetInput" data-exidx="{{i}}" data-si="{{si}}" data-field="reps"/>
+            <view class="sc" wx:if="{{si===item.currentSet}}" bindtap="onCheckSet" data-exidx="{{i}}" data-si="{{si}}">✓</view>
+            <view class="sc ok" wx:elif="{{si<item.currentSet}}">✓</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="bot"><view class="adde" bindtap="onAddExercise">＋ 动作</view></view>
+  <view class="rest" wx:if="{{showRest}}">
+    <text class="rt">组间休息</text><text class="rn">{{restSeconds}}s</text>
+    <view class="rc"><view class="rb" bindtap="onRestAdjust" data-delta="-10">-10s</view><view class="rsk" bindtap="onSkipRest">跳过</view><view class="rb" bindtap="onRestAdjust" data-delta="10">+10s</view></view>
+  </view>
+  <view class="em {{showEndModal?'on':''}}">
+    <text class="emt">结束今日训练</text>
+    <text class="ems">{{todayStr}}，{{exercises.length}}个动作，用时 {{timeDisplay}}</text>
+    <input class="emi" placeholder="在此处输入训练名称" value="{{trainName}}" bindinput="onNameInput"/>
+    <view class="emb"><view class="ebc" bindtap="onContinueTrain">继续训练</view><view class="ebd" bindtap="onSaveTrain">完成</view></view>
+  </view>
+</view>

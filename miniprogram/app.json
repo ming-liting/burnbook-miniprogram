@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/launch/index",
+    "pages/login/index",
+    "pages/home/index",
+    "pages/training/index",
+    "pages/timer/index",
+    "pages/exercises/index",
+    "pages/workout/index",
+    "pages/record/index",
+    "pages/progress/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "燃本 BURNBOOK",
+    "navigationBarBackgroundColor": "#1E1E1E",
+    "backgroundColor": "#1E1E1E",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

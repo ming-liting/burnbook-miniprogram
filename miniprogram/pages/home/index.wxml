@@ -1,0 +1,17 @@
+<!-- 首页 -->
+<view class="pg">
+  <view class="top">
+    <image class="ava" src="{{avatarUrl}}" mode="aspectFill" wx:if="{{avatarUrl}}"/>
+    <view class="ava ph" wx:else>👤</view>
+    <view class="gr"><text class="gh">{{greetingText}}，</text><text class="gn">{{nickName}}</text></view>
+  </view>
+  <view class="kc" bindtap="onStartWorkout">
+    <text class="kl">今日消耗</text><text class="kn">{{todayKcal}}kcal</text><view class="ktr"><text class="kt">{{todayKcal>0?'继续加油！':'快去运动吧~'}}</text><text class="kta">›</text></view>
+  </view>
+  <text class="st">最近训练</text>
+  <view class="rl" wx:if="{{recentList.length}}">
+    <view class="ri" wx:for="{{recentList}}" wx:key="_id"><text class="rd">{{item.trainDate}}</text><text class="rn">{{item.trainType}}</text><text class="rm">{{item.exerciseCount}}动作·{{item.duration}}min</text></view>
+  </view>
+  <view class="em" wx:else><text>暂无训练记录</text></view>
+  <view class="nav"><view class="n on">🏠<text>首页</text></view><view class="n" bindtap="onNav" data-t="training">⏱️<text>训练</text></view><view class="n" bindtap="onNav" data-t="record">📋<text>记录</text></view><view class="n" bindtap="onNav" data-t="profile">👤<text>我的</text></view></view>
+</view>

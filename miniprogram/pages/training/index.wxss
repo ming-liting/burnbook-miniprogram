@@ -1,0 +1,25 @@
+.page{width:100vw;min-height:100vh;background:#1E1E1E;padding:160rpx 40rpx 200rpx}
+
+.date{display:block;font-weight:700;font-size:56rpx;color:#FFF}
+.week{display:block;font-size:28rpx;color:#999;margin:8rpx 0 56rpx}
+
+/* 开始撸铁吧 + 历史 同行 */
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16rpx}
+.hero{font-weight:700;font-size:44rpx;color:#FFF}
+.hist-btn{padding:12rpx 28rpx;background:rgba(255,255,255,.08);border-radius:200rpx}
+.hist-btn text{font-size:26rpx;color:#B3A0FF}
+
+/* 记录每一滴汗水 */
+.slogan{display:block;font-size:28rpx;color:#666;margin-bottom:48rpx}
+
+/* 开始记录 - 宽度收窄 */
+.go-btn{width:80%;margin:0 auto 160rpx;height:100rpx;background:linear-gradient(135deg,#896CFE,#B3A0FF);border-radius:200rpx;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:36rpx;color:#FFF;letter-spacing:8rpx}
+
+/* 模板广场靠下 */
+.tpl{position:fixed;bottom:140rpx;left:40rpx;right:40rpx;text-align:center;padding:48rpx;background:rgba(255,255,255,.04);border-radius:24rpx}
+.tpl-t{display:block;font-weight:600;font-size:30rpx;color:#FFF;margin-bottom:12rpx}
+.tpl-s{font-size:24rpx;color:#666}
+.nav{position:fixed;bottom:0;left:0;width:100%;background:#1A1A1A;display:flex;justify-content:space-around;padding:16rpx 0 48rpx;z-index:999;border-top:1rpx solid rgba(255,255,255,.06)}
+.n{display:flex;flex-direction:column;align-items:center;gap:6rpx;font-size:40rpx;opacity:.4}
+.n text{font-size:22rpx}.n.on{opacity:1;color:#E2F163}
+

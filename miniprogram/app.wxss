@@ -1,0 +1,37 @@
+/* BURNBOOK 燃本 - 设计系统 */
+
+page {
+  --color-bg: #232323;
+  --color-accent: #E2F163;
+  --color-purple: #896CFE;
+  --color-purple-light: #B3A0FF;
+  --color-white: #FFFFFF;
+  --color-text: #232323;
+  --color-text-light: #666666;
+  --color-input-bg: #F5F5F5;
+
+  --font-heading: 'Roboto', 'PingFang SC', sans-serif;
+  --font-body: 'Inter', 'PingFang SC', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  --radius-sm: 10rpx;
+  --radius-md: 20rpx;
+  --radius-lg: 30rpx;
+  --radius-round: 100rpx;
+
+  font-family: var(--font-body);
+  font-size: 28rpx;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  box-sizing: border-box;
+}
+
+view, text, image, button, input, scroll-view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button { border: none; outline: none; background: transparent; }
+button::after { border: none; }
+input { background: transparent; }

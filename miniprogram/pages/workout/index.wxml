@@ -1,0 +1,15 @@
+<!-- 训练记录 - 训练Tab子页 -->
+<view class="pg">
+  <view class="top"><view class="back" bindtap="onBack">← 返回</view></view>
+  <text class="tl">训练记录</text>
+  <view class="list" wx:if="{{list.length}}">
+    <view class="it" wx:for="{{list}}" wx:for-index="i" wx:key="_id" bindtap="onToggle" data-i="{{i}}">
+      <view class="ith"><text class="itd">{{item.trainDate}}</text><text class="itn">{{item.trainType}}</text><text class="ita">{{item._open?'▾':'▸'}}</text></view>
+      <view class="itb" wx:if="{{item._open}}">
+        <view wx:for="{{item.exercises}}" wx:for-item="ex" wx:key="name"><text class="dexn">{{ex.name}}</text><text class="ds" wx:for="{{ex.sets}}" wx:for-item="s" wx:key="si">{{s.weight}}kg×{{s.reps}} </text></view>
+        <view class="acts"><text class="reu" catchtap="onReuse" data-i="{{i}}">📋 复用</text><text class="del" catchtap="onDel" data-id="{{item._id}}">🗑</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="emp" wx:else><text>暂无训练记录</text></view>
+</view>

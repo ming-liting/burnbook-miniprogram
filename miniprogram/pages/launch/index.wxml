@@ -1,0 +1,6 @@
+<!-- 启动页 - 燃本 BURNBOOK -->
+<view class="launch-page">
+  <text class="brand-cn">燃本</text>
+  <text class="brand-en">BURNBOOK</text>
+  <text class="tagline">记录每一滴汗水\nRecord Every Sweat</text>
+</view>
